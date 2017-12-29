@@ -3,68 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <title>Vue学习</title>
+  <link rel="stylesheet" href="css/index.css">
   <script src="lib/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <body>
-<div id="example">
-  <p>Original message:"{{message}}"</p>
-  <p>Computed reversed message:"{{reversedMessage}}"</p>
-</div>
-
-<!--<div id='example-3'>-->
-<!--<input type="checkbox" id="jack" value="Jack" v-model="checkedNames">-->
-<!--<label for="jack">Jack</label>-->
-<!--<input type="checkbox" id="john" value="John" v-model="checkedNames">-->
-<!--<label for="john">John</label>-->
-<!--<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">-->
-<!--<label for="mike">Mike</label>-->
-<!--<br>-->
-<!--<span>Checked names: {{ checkedNames }}</span>-->
+<!--<div id="example">-->
+<!--<p>Original message:"{{message}}"</p>-->
+<!--<p>Computed reversed message:"{{reversedMessage}}"</p>-->
 <!--</div>-->
 
-<div id="example-4">
-  <input type="radio" id="one" value="One" v-model="picked">
-  <label for="one">One</label>
-  <br>
-  <input type="radio" id="two" value="Two" v-model="picked">
-  <label for="two">Two</label>
-  <br>
-  <span>Picked: {{ picked }}</span>
-</div>
+<!--&lt;!&ndash;<div id='example-3'>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" id="jack" value="Jack" v-model="checkedNames">&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="jack">Jack</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" id="john" value="John" v-model="checkedNames">&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="john">John</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">&ndash;&gt;-->
+<!--&lt;!&ndash;<label for="mike">Mike</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<br>&ndash;&gt;-->
+<!--&lt;!&ndash;<span>Checked names: {{ checkedNames }}</span>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-<label>Choose a browser from this list:
-  <input list="browsers" name="myBrowser"/></label>
-<datalist id="browsers">
-  <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-  <!--<label for="jack">Jack</label>-->
-  <input type="checkbox" id="john" value="John" v-model="checkedNames">
-  <!--<label for="john">John</label>-->
-  <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-  <!--<label for="mike">Mike</label>-->
-  <!--<p>"Chrome"</p>-->
-  <!--<p>"Firefox"</p>-->
+<!--<div id="example-4">-->
+<!--<input type="radio" id="one" value="One" v-model="picked">-->
+<!--<label for="one">One</label>-->
+<!--<br>-->
+<!--<input type="radio" id="two" value="Two" v-model="picked">-->
+<!--<label for="two">Two</label>-->
+<!--<br>-->
+<!--<span>Picked: {{ picked }}</span>-->
+<!--</div>-->
 
-  <!--<option value="Chrome">-->
-  <!--<option value="Firefox">-->
-  <!--<option value="Internet Explorer">-->
-  <!--<option value="Opera">-->
-  <!--<option value="Safari">-->
-</datalist>
+<!--<label>Choose a browser from this list:-->
+<!--<input list="browsers" name="myBrowser"/></label>-->
+<!--<datalist id="browsers">-->
+<!--<input type="checkbox" id="jack" value="Jack" v-model="checkedNames">-->
+<!--&lt;!&ndash;<label for="jack">Jack</label>&ndash;&gt;-->
+<!--<input type="checkbox" id="john" value="John" v-model="checkedNames">-->
+<!--&lt;!&ndash;<label for="john">John</label>&ndash;&gt;-->
+<!--<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">-->
+<!--&lt;!&ndash;<label for="mike">Mike</label>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>"Chrome"</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<p>"Firefox"</p>&ndash;&gt;-->
 
-<div id="example-6">
-  <select v-model="selected" multiple>
-    <option>A</option>
-    <option>B</option>
-    <option>C</option>
-  </select>
-  <br>
-  <span>Selected: {{ selected }}</span>
-</div>
+<!--&lt;!&ndash;<option value="Chrome">&ndash;&gt;-->
+<!--&lt;!&ndash;<option value="Firefox">&ndash;&gt;-->
+<!--&lt;!&ndash;<option value="Internet Explorer">&ndash;&gt;-->
+<!--&lt;!&ndash;<option value="Opera">&ndash;&gt;-->
+<!--&lt;!&ndash;<option value="Safari">&ndash;&gt;-->
+<!--</datalist>-->
 
-<div id="example-7">
-  <input v-model.lazy="message" placeholder="edit me">
-  <p>Message is: {{ message }}</p>
-</div>
+<!--<div id="example-6">-->
+<!--<select v-model="selected" multiple>-->
+<!--<option>A</option>-->
+<!--<option>B</option>-->
+<!--<option>C</option>-->
+<!--</select>-->
+<!--<br>-->
+<!--<span>Selected: {{ selected }}</span>-->
+<!--</div>-->
+
+<!--<div id="example-7">-->
+<!--<input v-model.lazy="message" placeholder="edit me">-->
+<!--<p>Message is: {{ message }}</p>-->
+<!--</div>-->
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>-->
+
+<!--<div id="list-complete-demo" class="demo">-->
+<!--<button v-on:click="shuffle">Shuffle</button>-->
+<!--<button v-on:click="add">Add</button>-->
+<!--<button v-on:click="remove">Remove</button>-->
+<!--<transition-group name="list-complete" tag="p">-->
+<!--<span-->
+<!--v-for="item in items"-->
+<!--v-bind:key="item"-->
+<!--class="list-complete-item"-->
+<!--&gt;-->
+<!--{{ item }}-->
+<!--</span>-->
+<!--</transition-group>-->
+<!--</div>-->
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>-->
+
+<!--<div id="dynamic-fade-demo" class="demo">-->
+<!--Fade In: <input type="range" v-model="fadeInDuration" min="0" v-bind:max="maxFadeDuration">-->
+<!--Fade Out: <input type="range" v-model="fadeOutDuration" min="0" v-bind:max="maxFadeDuration">-->
+<!--<transition-->
+<!--v-bind:css="false"-->
+<!--v-on:before-enter="beforeEnter"-->
+<!--v-on:enter="enter"-->
+<!--v-on:leave="leave"-->
+<!--&gt;-->
+<!--<p v-if="show">hello</p>-->
+<!--</transition>-->
+<!--<button-->
+<!--v-if="stop"-->
+<!--v-on:click="stop = false; show = false"-->
+<!--&gt;Start animating</button>-->
+<!--<button-->
+<!--v-else-->
+<!--v-on:click="stop = true"-->
+<!--&gt;Stop it!</button>-->
+<!--</div>-->
+<div id="app"></div>
 
 </body>
 <script src="js/index.js"></script>
